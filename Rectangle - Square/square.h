@@ -9,32 +9,30 @@
 The format of the printing is as follows:
 Square: The side = 6 and the area = 36*/
 
-#ifndef SQUARE_CLASS_H
-#define SQUARE_CLASS_H
 
-//LIBRARIES & MACROS
 #include <iostream>
+using namespace std;
 
-//CLASS
 class SQUARE {
-	//DATA
-	int sides;
-	int area;
+    int sides;
+    int area;
 public:
-	//CONSTRUCTOR PROTOTYPES
-	SQUARE();
+    SQUARE();
+    SQUARE(int l) : sides(l) { calculateSquareArea(); }
 
-	//MEMBER FUNCTION PROTOTYPES
+    void setSquareSides();
+    void calculateSquareArea();
 
-	/*Setters*/
-	void setSquareSides();
-	void calculateSquareArea();
-	int calculateSquaresSum(SQUARE s1, SQUARE s2);
+    int getSquareSides() const { return sides; }
+    int getSquareArea() const { return area; }
 
-	/*Getters*/
-	int getSquareSides();
-	int getSquareArea();
-	void printSquare();
+    void printSquare() const { cout << *this; }
+
+    friend ostream& operator<<(ostream& COUT, const SQUARE& square);
+    friend SQUARE operator*(const SQUARE& square, int factor);
+    friend SQUARE operator+(const SQUARE& s1, const SQUARE& s2);
 };
 
-#endif //SQUARE_CLASS_H
+
+
+

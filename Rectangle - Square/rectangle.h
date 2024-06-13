@@ -14,7 +14,7 @@ Rectangle: The length = 6, the width = 2 and the area = 12*/
 
 //LIBRARIES & MACROS
 #include <iostream>
-
+using namespace std;
 //CLASS
 class RECTANGLE {
 	//DATA
@@ -23,7 +23,8 @@ class RECTANGLE {
 	int area;
 public:
 	//CONSTRUCTOR PROTOTYPES
-	RECTANGLE();
+	   RECTANGLE() : length(0), width(0), area(0) {}
+    RECTANGLE(int l, int w) : length(l), width(w) { calculateRectArea(); }
 
 	//MEMBER FUNCTION PROTOTYPES
 	
@@ -31,13 +32,14 @@ public:
 	void setRectLength();
 	void setRectWidth();
 	void calculateRectArea();
-	int calculateRectsSum(RECTANGLE r1, RECTANGLE r2);
 
-	/*Getters*/
-	int getRectLength();
-	int getRectWidth();
-	int getRectArea();
-	void printRect();
+
+	/*Operator overloaded friend functions*/
+	friend ostream& operator<<(ostream& COUT, const RECTANGLE& rect);
+	friend RECTANGLE operator*(const RECTANGLE& rect, int factor);
+	friend RECTANGLE operator+(const RECTANGLE& r1, const RECTANGLE& r2);
+
+
 };
 
 #endif //RECTANGLE_CLASS_H
