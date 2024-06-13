@@ -4,10 +4,6 @@
 
 using namespace std;
 
-/*Constructors*/
-
-RECTANGLE::RECTANGLE() : length(0), width(0), area(0) {}
-
 /*Setters*/
 
 //Function to set the length of a rectangle from user input
@@ -37,35 +33,23 @@ void RECTANGLE::calculateRectArea() {
 	area = length * width;
 }
 
-//Function to implement r = r1 * 2 + r2
-int RECTANGLE::calculateRectsSum(RECTANGLE r1, RECTANGLE r2) {
-    //Scale r1 by 2
-    r1.length = r1.length * 2;
-    r1.width = r1.width * 2;
 
-    //Add the two rectangles together
-    length = r1.length + r2.length;
-    width = r1.width + r2.width;
-    
-    calculateRectArea();
 
-    return length, width, area;
+ostream& operator<<(ostream& COUT, const RECTANGLE& rect) {
+    COUT << "Rectangle: The length = " << rect.length
+        << ", the width = " << rect.width
+        << ", and the area = " << rect.area << endl << endl;
+    return COUT;
 }
 
-/*Getters*/
-
-//Functions to access private class data (length, width, and area)
-int RECTANGLE::getRectLength() {
-	return length;
-}
-int RECTANGLE::getRectWidth() {
-	return width;
-}
-int RECTANGLE::getRectArea() {
-	return area;
+ RECTANGLE operator*(const RECTANGLE& rect, int factor) {
+    RECTANGLE newRect(rect.length * factor, rect.width * factor);
+    return newRect;
 }
 
-//Function to prunt the rectangle information
-void RECTANGLE::printRect() {
-    cout << "Rectangle: The length = " << length << ", the width = " << width << ", and the area = " << area << "\n" << endl;
-}
+ RECTANGLE operator+(const RECTANGLE& r1, const RECTANGLE& r2) {
+     RECTANGLE newRect(r1.length + r2.length, r1.width + r2.width);
+     return newRect;
+
+ }
+
