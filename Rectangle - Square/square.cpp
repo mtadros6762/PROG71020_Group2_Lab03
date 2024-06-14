@@ -1,3 +1,5 @@
+#include "square.h"
+
 //madisont, adilf, armaanm - prog71020 - lab03 - square class implementation
 
 using namespace std;
