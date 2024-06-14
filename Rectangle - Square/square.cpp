@@ -1,10 +1,6 @@
-#include "square.h"
-
 //madisont, adilf, armaanm - prog71020 - lab03 - square class implementation
 
 #include "square.h"
-
-using namespace std;
 
 SQUARE::SQUARE() : sides(0), area(0) {}
 

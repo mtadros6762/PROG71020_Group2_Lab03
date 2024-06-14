@@ -15,11 +15,13 @@ int main(void) {
 	r1.setRectLength();
 	r1.setRectWidth();
 	r1.calculateRectArea();
-	cout << r1;
-	 r2 = r1 * 2;
-	cout << r2;
-	r3 = r1 + r2;
+	cout << "| Rectangle 1 |\n";
+	r2.setRectLength();
+	r2.setRectWidth();
+	r2.calculateRectArea();
+	r3 = r1 * 2 + r2;
 	cout << r3;
+
 
 	/*Square Test*/
 	SQUARE s1, s2, s3;
