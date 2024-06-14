@@ -4,6 +4,11 @@
 
 using namespace std;
 
+/*Constructors*/
+
+RECTANGLE::RECTANGLE() : length(0), width(0), area(0) {}
+RECTANGLE::RECTANGLE(int l, int w) : length(l), width(w) { calculateRectArea(); }
+
 /*Setters*/
 
 //Function to set the length of a rectangle from user input
@@ -33,8 +38,9 @@ void RECTANGLE::calculateRectArea() {
 	area = length * width;
 }
 
+/*Friend Overloaded Operators*/
 
-
+//Function to overload the cout << operator
 ostream& operator<<(ostream& COUT, const RECTANGLE& rect) {
     COUT << "Rectangle: The length = " << rect.length
         << ", the width = " << rect.width
@@ -42,14 +48,15 @@ ostream& operator<<(ostream& COUT, const RECTANGLE& rect) {
     return COUT;
 }
 
+//Function to overload the multiplication * operator
  RECTANGLE operator*(const RECTANGLE& rect, int factor) {
     RECTANGLE newRect(rect.length * factor, rect.width * factor);
     return newRect;
 }
 
+ //Function to overload the addition + operator
  RECTANGLE operator+(const RECTANGLE& r1, const RECTANGLE& r2) {
      RECTANGLE newRect(r1.length + r2.length, r1.width + r2.width);
      return newRect;
-
  }
 

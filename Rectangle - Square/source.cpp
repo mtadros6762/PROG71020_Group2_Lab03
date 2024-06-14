@@ -16,8 +16,15 @@ int main(void) {
 	r1.setRectWidth();
 	r1.calculateRectArea();
 	cout << r1;
-	 r2 = r1 * 2;
+
+	cout << "| Rectangle 2 |\n";
+	r2.setRectLength();
+	r2.setRectWidth();
+	r2.calculateRectArea();
 	cout << r2;
+
+	cout << "| Rectangle3 = (Rectangle1 * 2) + Rectangle2 |\n";
+	r1 = r1 * 2;
 	r3 = r1 + r2;
 	cout << r3;
 
@@ -29,11 +36,16 @@ int main(void) {
 	s1.setSquareSides();
 	s1.calculateSquareArea();
 	cout << s1;
-	s2 = s1 * 2;
+
+	cout << "| Square 2 |\n";
+	s2.setSquareSides();
+	s2.calculateSquareArea();
 	cout << s2;
+
+	cout << "| Square3 = (Square1 * 2) + Square2 |\n";
+	s1 = s1 * 2;
 	s3 = s1 + s2;
 	cout << s3;
-
 
 	return 0;
 }
