@@ -8,6 +8,7 @@ The Three Musketeers
   
 2. Adil Farid
 - Built square class
+- Created overloaded operator functions
   
 3. Armaan Maan
 - Source code
