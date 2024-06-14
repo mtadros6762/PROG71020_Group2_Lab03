@@ -4,8 +4,8 @@
 
 //REQUIREMENTS
 /*Design, implement and test a Square class which:
-	a. Has a function to calculate its area
-	b. It can be printed using cout <<
+    a. Has a function to calculate its area
+    b. It can be printed using cout <<
 The format of the printing is as follows:
 Square: The side = 6 and the area = 36*/
 

@@ -28,6 +28,7 @@ int main(void) {
 	r3 = r1 + r2;
 	cout << r3;
 
+
 	/*Square Test*/
 	SQUARE s1, s2, s3;
 

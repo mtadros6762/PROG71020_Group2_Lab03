@@ -24,7 +24,7 @@ void RECTANGLE::setRectLength() {
 
 //Function to set the width of a rectangle from user input
 void RECTANGLE::setRectWidth() {
-    cout << "Please enter an integer for the width of the Rectangle: ";
+    cout << "Please enter an integer for the width of the Rectangle:   ";
     //Loop until the user inputs a valid integer that is greater than 0 and is not equal to length
     while (!(cin >> width) || width <= 0 || width == length) {
         cout << "Invalid input. Enter a valid integer for the width of the Rectangle: ";
@@ -42,7 +42,7 @@ void RECTANGLE::calculateRectArea() {
 
 //Function to overload the cout << operator
 ostream& operator<<(ostream& COUT, const RECTANGLE& rect) {
-    COUT << "Rectangle: The length = " << rect.length
+    COUT <<endl<< "Rectangle: The length = " << rect.length
         << ", the width = " << rect.width
         << ", and the area = " << rect.area << endl << endl;
     return COUT;
